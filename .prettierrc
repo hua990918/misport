@@ -1,0 +1,11 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "singleAttributePerLine": true,
+    "bracketSameLine": true,
+    "vueIndentScriptAndStyle": true,
+    "htmlWhitespaceSensitivity": "ignore",
+    "printWidth": 180
+}
