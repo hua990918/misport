@@ -1,16 +1,34 @@
 <template>
-    <div>index</div>
-    <n-space>
-        <n-button>Default</n-button>
-        <n-button type="tertiary">Tertiary</n-button>
-        <n-button type="primary">Primary</n-button>
-        <n-button type="info">Info</n-button>
-        <n-button type="success">Success</n-button>
-        <n-button type="warning">Warning</n-button>
-        <n-button type="error">Error</n-button>
-    </n-space>
+    <div class="index-page">
+        <n-message-provider>
+            <info></info>
+        </n-message-provider>
+        <msg></msg>
+    </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    import info from './components/info.vue'
+    import msg from './components/msg.vue'
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+    .index-page {
+        background-image: url(https://apis.jxcxin.cn/api/Bing);
+        background-size: 100% 100%;
+        background-repeat: repeat;
+        background-attachment: fixed;
+        // top: 0;
+        // position: fixed;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
+        // z-index: -2;
+    }
+
+    @media (max-width: 768px) {
+        .index-page {
+            padding: 0 10px 10px 10px;
+        }
+    }
+</style>
