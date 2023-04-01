@@ -51,29 +51,34 @@
             </div>
             <!-- 常见问题 -->
             <div class="issue">
-                <span>常见问题</span>
+                <span @click="qsClick">常见问题</span>
                 <span>|</span>
                 <span>API调用</span>
             </div>
+            <!-- 模态框 -->
+            <modalVal ref="modalRef"></modalVal>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
     import { ref } from 'vue'
-    import type { FormInst } from 'naive-ui'
+    import modalVal from './modal.vue'
     import type { user } from '@/types/index'
     import { useMessage } from 'naive-ui'
 
-    const formRef = ref<FormInst | null>(null)
-    const loading = ref<boolean>(false)
     const message = useMessage()
+    const modalRef = ref<InstanceType<typeof modalVal> | null>(null)
+    const loading = ref<boolean>(false)
     const formValue = ref<user>({
         user: '',
         pwd: '',
         step: '',
     })
 
+    /**
+     * 提交表单
+     */
     function handleClick() {
         loading.value = true
         // 判断信息是否完整
@@ -89,6 +94,13 @@
             return
         }
         //提交表单
+    }
+
+    /**
+     * 常见问题
+     */
+    function qsClick() {
+        modalRef.value?.handleOpenModal()
     }
 </script>
 
