@@ -1,8 +1,13 @@
 const routes = [
     {
         path: '/',
-        name: 'home',
+        name: 'index',
         component: () => import('@/views/index/index.vue'),
+    },
+    {
+        path: '/api',
+        name: 'api',
+        component: () => import('@/views/index/api.vue'),
     },
 ]
 

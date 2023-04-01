@@ -64,7 +64,7 @@
 <script setup lang="ts">
     import { ref } from 'vue'
     import modalVal from './modal.vue'
-    import type { user } from '@/types/index'
+    import type { user } from '@/types'
     import { useMessage } from 'naive-ui'
 
     const message = useMessage()

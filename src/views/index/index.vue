@@ -14,7 +14,7 @@
 
 <style lang="scss" scoped>
     .index-page {
-        background-image: url(https://apis.jxcxin.cn/api/Bing);
+        background-image: url(https://yyink.cn/tool/api/bing.php);
         background-size: 100% 100%;
         background-repeat: repeat;
         background-attachment: fixed;
