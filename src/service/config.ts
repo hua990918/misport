@@ -1,4 +1,4 @@
-const baseURL = 'https://consult-api.itheima.net/'
+const baseURL = 'https://sport-api.yyink.cn/'
 const timeout = 10000
 
 export { baseURL, timeout }

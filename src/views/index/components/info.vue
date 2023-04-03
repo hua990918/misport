@@ -29,7 +29,7 @@
                         <n-input
                             type="password"
                             show-password-on="mousedown"
-                            v-model:value="formValue.pwd"
+                            v-model:value="formValue.password"
                             placeholder="Zepp Life密码(原小米运动)" />
                     </n-input-group>
                     <n-input-group>
@@ -66,23 +66,24 @@
     import modalVal from './modal.vue'
     import type { user } from '@/types'
     import { useMessage } from 'naive-ui'
+    import { submitStep } from '@/api/index'
 
     const message = useMessage()
     const modalRef = ref<InstanceType<typeof modalVal> | null>(null)
     const loading = ref<boolean>(false)
     const formValue = ref<user>({
         user: '',
-        pwd: '',
+        password: '',
         step: '',
     })
 
     /**
      * 提交表单
      */
-    function handleClick() {
+    async function handleClick() {
         loading.value = true
         // 判断信息是否完整
-        if (!formValue.value.user || !formValue.value.pwd || !formValue.value.step) {
+        if (!formValue.value.user || !formValue.value.password || !formValue.value.step) {
             message.error('信息输入不完整')
             loading.value = false
             return
@@ -94,6 +95,14 @@
             return
         }
         //提交表单
+        const { data } = await submitStep(formValue.value)
+        if (data.code === 200) {
+            loading.value = false
+            message.success(data.msg)
+        } else {
+            loading.value = false
+            message.error(data.msg)
+        }
     }
 
     /**

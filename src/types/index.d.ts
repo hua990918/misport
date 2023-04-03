@@ -1,11 +1,14 @@
 // 用户信息
-export interface user {
+export type user = {
     user: string
-    pwd: string
+    password: string
     step: string
 }
 
-// ref类型
-export interface Modalval {
-    handleShowModal: () => boolean | null
+// 步数接口
+export type stepinfo = {
+    code: number
+    msg: string
+    user: string
+    step: string
 }
