@@ -1,40 +1,28 @@
-# yunyan-sports
+# 云言运动助手
 
-This template should help get you started developing with Vue 3 in Vite.
+VUE运动刷步助手WEB版，后端nodejs基于小米运动接口协议刷步，步数可秒同步至微信、支付宝等平台
 
-## Recommended IDE Setup
+## 更新说明
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+2023年3月28日—-新增伪造IP地址，防止频繁请求被拦截
+2022年9月20日—-新增支持Zeep Life邮箱账号，优化代码判断逻辑
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
+## 如何使用
+1.克隆本项目到本地
+```sh
+git clone https://gitee.com/xunmeng233/yunyan-sports.git
+```
+2.进入项目目录安装依赖文件
 ```sh
 npm install
 ```
-
-### Compile and Hot-Reload for Development
-
+3.本地运行
 ```sh
 npm run dev
 ```
-
-### Type-Check, Compile and Minify for Production
-
+4.项目打包
 ```sh
 npm run build
 ```
+
+项目打包完毕步数到静态服务器即可（支持云服务器，虚拟主机）
